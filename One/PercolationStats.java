@@ -8,11 +8,16 @@
  *  Implements the PrecolationStats API for class
  *
  *
- *----------------------------------------------------------------*/
+ */
 
+/**
+ * @author trey
+ *
+ */
 public class PercolationStats {
 
-    private static final int ARRAY_PAD = 1; //pad for to account for extra space in arrays
+    private static final int ARRAY_PAD = 1; 
+    //pad for to account for extra space in arrays
     private static final double POS = 1.96; //point of significance
     private int count;                      //number of sites in the grid
     private double [] runs;                 //threshold of each trial
@@ -21,11 +26,9 @@ public class PercolationStats {
      * fills in the a grid and opens random connections.
      * @param gridSize size of grid
      * @param repetitions times to run
-     * @throws java.lang.IllegalArgumentException
-     * urns trials until it grid percolates stores how many times it takes.
+     * runs trials until it grid percolates stores how many times it takes.
      */
-    public PercolationStats(final int gridSize, final int repetitions)
-            throws java.lang.IllegalArgumentException {
+    public PercolationStats(final int gridSize, final int repetitions) {
 
         if (gridSize <= 0 || repetitions <= 0) {
             throw new java.lang.IllegalArgumentException(
