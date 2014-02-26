@@ -20,12 +20,11 @@ public class Percolation {
     private int virtualTop; // integer value of the virtual top
     private int virtualBottom; // integer value of the virtual bottom;
 
-    public static final int EXTRA_CELLS = 1; // constant for extra cell on
+    private static final int EXTRA_CELLS = 1; // constant for extra cell on
                                              // arrays for 1 based indexing
 
-    public static final int VIRTUAL_CAP_SIZE = 2; // constant for virtual
+    private static final int VIRTUAL_CAP_SIZE = 2; // constant for virtual
                                                   // top/bottom space on th
-                                                  // union objects
 
     /**
      * @param n
@@ -47,9 +46,9 @@ public class Percolation {
      * @return array
      */
     private boolean[][] initializeGrid() {
-        int  arraySize = side + EXTRA_CELLS; // ignore the zeros so pad 
+        int  arraySize = side + EXTRA_CELLS; // ignore the zeros so pad
                                              // with extra space
-        boolean[][] grid = new boolean[arraySize][arraySize]; 
+        grid = new boolean[arraySize] [arraySize];
         for (int row = 0; row < arraySize; row++) {
             for (int column = 0; column < arraySize; column++) {
                 grid[row][column] = false;
@@ -77,11 +76,11 @@ public class Percolation {
     }
 
     /**
-     * @param row
-     * @param column
-     * is site (row i, column j) open?
-     * @return
-     */
+     * @param row row to check
+     * @param column column to check
+     * @return boolean
+     * is site (row i, column j) open.
+    */
     public final boolean isOpen(final int row, final int column) {
         checkInput(row);
         checkInput(column);
@@ -90,8 +89,8 @@ public class Percolation {
     }
 
     /**
-     * @param row
-     * @param column
+     * @param row row to checxk
+     * @param column column to check
      * @return // is site (row i, column j) full connected to the top row?
      */
     public final boolean isFull(final int row, final int column) {
@@ -102,22 +101,22 @@ public class Percolation {
     }
 
     /**
-     * does the system percolate
+     * does the system percolate.
      * @return boolean
      */
-    public boolean percolates() {
-
+    public final boolean percolates() {
         return objUnion.connected(virtualBottom, virtualTop);
     }
 
     /**
      * connect the the site to upper lower left or right neighbor
      * site if it's open.
-     * @param row
-     * @param column
-     * @param pos
+     * @param row row to check
+     * @param column column to check
+     * @param pos position of neighbor upper,lower,left or right
      */
-    private void connectNeighbor(final int row, final int column, final String pos) {
+    private void connectNeighbor(
+            final int row, final int column, final String pos) {
         int nextRow = 0;
         int nextColumn = 0;
         int adjacentSite = -1;
@@ -167,8 +166,8 @@ public class Percolation {
 
     /**
      * convert row/column site to the subscript used by the 1 dim union objects.
-     * @param row
-     * @param column
+     * @param row row to convert
+     * @param column to convert
      * @return int
      */
     private int twoDSubscript(final int row, final int column) {
@@ -179,16 +178,12 @@ public class Percolation {
         return (u);
     }
     /**
-     * @param i
-     * @throws java.lang.IndexOutOfBoundsException
+     * @param i integer to validate
      */
-    private void checkInput(final int i)
-            throws java.lang.IndexOutOfBoundsException {
+    private void checkInput(final int i) {
         if (i < 1 || i > count) {
             throw new IndexOutOfBoundsException("row index i out of bounds:"
                     + i);
         }
-
     }
-
 }
