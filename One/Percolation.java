@@ -35,7 +35,7 @@ public class Percolation {
      *            // and the union objects for processing connections // and
      *            define virtual top and bottom
      */
-    public Percolation(final int n) {
+    public Percolation(int n) {
         count = n * n;
         side = n;
         virtualTop = 0;
@@ -65,7 +65,7 @@ public class Percolation {
      * @param row
      * @param column
      */
-    public final void  open(final int row, final int column) {
+    public void  open(int row, int column) {
         checkInput(row);
         checkInput(column);
 
@@ -84,7 +84,7 @@ public class Percolation {
      * @return boolean
      * is site (row i, column j) open.
     */
-    public final boolean isOpen(final int row, final int column) {
+    public boolean isOpen(int row, int column) {
         checkInput(row);
         checkInput(column);
         return grid[row][column];
@@ -96,7 +96,7 @@ public class Percolation {
      * @param column column to check
      * @return // is site (row i, column j) full connected to the top row?
      */
-    public final boolean isFull(final int row, final int column) {
+    public boolean isFull(int row, int column) {
         checkInput(row);
         checkInput(column);
         int requestedSite = twoDSubscript(row, column);
@@ -107,7 +107,7 @@ public class Percolation {
      * does the system percolate.
      * @return boolean
      */
-    public final boolean percolates() {
+    public boolean percolates() {
         return objUnion.connected(virtualBottom, virtualTop);
     }
 
@@ -184,7 +184,7 @@ public class Percolation {
      * @param i integer to validate
      */
     private void checkInput(final int i) {
-        if (i < 1 || i > count) {
+        if (i < 1 || i > side) {
             throw new IndexOutOfBoundsException("row index i out of bounds:"
                     + i);
         }

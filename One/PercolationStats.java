@@ -28,7 +28,7 @@ public class PercolationStats {
      * @param repetitions times to run
      * runs trials until it grid percolates stores how many times it takes.
      */
-    public PercolationStats(final int gridSize, final int repetitions) {
+    public PercolationStats(int gridSize, int repetitions) {
 
         if (gridSize <= 0 || repetitions <= 0) {
             throw new java.lang.IllegalArgumentException(
@@ -57,25 +57,25 @@ public class PercolationStats {
     /**
      * @return mean average of percolation threshold
      */
-    public final double mean() {
+    public double mean() {
         return StdStats.mean(runs);
     };
     /**
     * @return sample standard deviation of percolation threshold
     */
-    public final double stddev() {
+    public double stddev() {
         return StdStats.stddev(runs);
     };
     /**
      * @return returns lower bound of the 95% confidence interval
     */
-    public final double confidenceLo() {
+    public double confidenceLo() {
         return mean() - ((POS * stddev()) / (Math.sqrt(runs.length)));
     };
     /**
      * @return upper bound of the 95% confidence interval
      */
-    public final double confidenceHi() {
+    public double confidenceHi() {
         return mean() + ((POS * stddev()) / (Math.sqrt(runs.length)));
     };
     /**

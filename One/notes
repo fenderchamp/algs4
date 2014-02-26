@@ -1,0 +1,237 @@
+
+Analysis of Algorithms
+
+Programmer, client, throetician, block and tackling is sometimes necessar.
+Student might play any or all of these roles.
+
+Running Time.
+understanding the running time of the computation goes back to Babbage and before.
+
+
+Analytic engine had a crank, Babbage would know how many times you have to turn the crank to get the answer. not much different in todays world.
+
+
+how many times does something have to happen to get a piece of work done.
+
+Performance Prediction.   
+   understanding some theoretical basis for how the perform.
+
+   avoid perfomance bugs.
+   it's very frequent to see a situation where the client gets bad performance becuasethe programmer didn't understand the performance characteristics of the used algorithm.
+
+
+Predict/compare performance of algorithms.
+
+Some sucesses
+
+FFT Fourier Transform Algorithm.
+
+Brute force is N2 steps
+Difference between N2 and NlogN steps 
+
+N-body simulations
+N log N steps enables no research
+Barnes-Hut algoritm.
+
+
+The challenge is to use your program to be able to solve a large practical input.
+
+Insight is due to Knuth in the 70's who said we can use scientific method to understannd performance of algorithms.
+
+S
+1. Observe Running time
+2 Hypothesize
+3 Predict
+4 Verify 
+5 Validate
+
+
+Principles 
+Experiments must be reproducible
+Hypotheses must be falsifiable
+
+
+
+3 sum problem
+
+given N distinct integers how many triples sub to exactly zero
+used in computational geometry used in graphics programs.
+
+use a triple for loop to check all of the combos in an array of integers
+how to calculate the time.
+   Empirical Analysis
+      1. Stopwatch it. or use java's stopwatch class 
+   Data Analysis
+      2. Do a plot with dataset size on the x and time on the y.  
+      log/log plot  straight line and slope of the straight line.  
+      In most programs we have a power log like this
+
+System Independent
+   Algorithm
+   Input Data
+System Dependent
+   Machine, network etc
+
+Mathmatical model allows us to understand what is happening not just predict running times
+   Knuth started the method
+   Figure up the cost and frequency off all of the operations and add it up. 
+   Knuth wrote a series of books on the cost of a wide range of algorithms
+
+you can run experiments (old days there were computer manuals with the costs of operations)
+
+e.g. run a billion adds and figure out the times in nanoseconds.
+
+variable declaraion int a; C1 (nanoseconds)
+
+Simplify the analysis use a Cost model 
+1. Use some basic operation (most expensive/frequent) The running time will grow like a constant time the most expensive
+2. ignore lower order temrs 
+    when N is large the Terms are negliglbe
+    when N is really small we don't care about it.
+
+Cost model and Tilde notiation
+
+Estimating a discrete sum
+1. Replace the sum with and integral and use calculus
+We don't need to use the exact models and advanced models.
+
+approximate models are ok T(N) ~ cN3 to the third.
+
+order of growth classification 
+
+1. log N, N Nlog N, N2, N3 and 2n
+running time of the algorithm is  proportional to N.
+constant,
+logarithmic, 
+linear,
+linearlogarithmic, 
+quadratic,
+cubic,
+exponential
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ N2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
