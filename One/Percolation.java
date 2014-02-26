@@ -9,7 +9,15 @@
  *
  *----------------------------------------------------------------*/
 
+/**
+ * @author trey
+ *
+ */
 public class Percolation {
+    private static final int EXTRA_CELLS = 1; // constant for extra cell on
+                                             // arrays for 1 based indexing
+    private static final int VIRTUAL_CAP_SIZE = 2; // constant for virtual
+                                                  // top/bottom space on th
     private WeightedQuickUnionUF objUnion; // union object with virtual top and
                                            // bottom
     private WeightedQuickUnionUF isFullUnion; // union object with virtual top
@@ -20,11 +28,6 @@ public class Percolation {
     private int virtualTop; // integer value of the virtual top
     private int virtualBottom; // integer value of the virtual bottom;
 
-    private static final int EXTRA_CELLS = 1; // constant for extra cell on
-                                             // arrays for 1 based indexing
-
-    private static final int VIRTUAL_CAP_SIZE = 2; // constant for virtual
-                                                  // top/bottom space on th
 
     /**
      * @param n
